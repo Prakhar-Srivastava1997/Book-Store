@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h2>Our Collection Record</h2>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Book Title</th>
+                    <th scope="col">ISBN #</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Pages</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let res of booklist">
+                      <td>{{res.bookName}}</td>
+                      <td>{{res.ISBN_Number}}</td>
+                      <td>{{res.author}}</td>
+                      <td>{{res.category}}</td>
+                      <td>${{res.price}}</td>
+                      <td>{{res.pages}}</td>
+                      <td>
+                        <i class="glyphicon glyphicon-trash" id="trash" (click)="trash(res.id)"></i>
+                        <i class="glyphicon glyphicon-edit" id="edit" (click)="edit(res.id)"></i>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+.container-fluid{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.left{
+    height: 753px;
+    width: 720px;
+    background: url('../../../../assets/admin.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow-y: hidden;
+}
+
+.head{
+    color:darkblue;
+    font-weight: bold;
+    padding-left: 100px;
+    padding-top: 250px;
+}
+
+#lgobtn{
+    width: 200px;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+.right{
+    margin-left: -70px;
+    width: 800px;
+}
+
+.mytask{
+    color:black;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 300px;
+    padding-top: 50px;
+    animation-name: beat;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes beat{
+    0%{
+        transform: scale(1.5,1.5);
+    }
+    20%{
+        transform: scale(1,1);
+    }
+    40%{
+        transform: scale(1.5,1.5);
+    }
+    60%{
+        transform: scale(1,1);
+    }
+    80%{
+        transform: scale(1.5,1.5);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+#btn1{
+    margin-top: 100px;
+    margin-left: 200px;
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
+    position:fixed;
+}
+
+#btn2{
+    margin-top: 200px;
+    margin-left: 200px;
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
+    position:fixed;
+}
+
+#btn3{
+    margin-top: 300px;
+    margin-left: 200px;
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
+    position:fixed;
+}
+
+#btn4{
+    margin-top: 400px;
+    margin-left: 200px;
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
+    position:fixed;
+  
+}
+
+#adminwallet{
+    margin-left: 160px;
+    margin-top: 100px;
+    font-weight: bold;
+}
+
+#belowrow{
+    margin-top: 20px;
+    margin-left: 100px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="svg">
+            <h2 class="head">Add Book Form</h2>
+        <form [formGroup]="addBookForm" (ngSubmit)="addBook(addBookForm)" class="form">
+            <div class="form-group">
+                <input type="text" formControlName="bookName" placeholder="Enter Book Title"><br>
+                <span *ngIf="addBookForm.controls['bookName'].hasError('required') && addBookForm.controls['bookName'].touched" class="text text-danger">Please provide book title!!</span>
+                <span *ngIf="addBookForm.controls['bookName'].hasError('minlength')" class="text text-danger">Minimum 5 characters allowed!!</span>
+                <span *ngIf="addBookForm.controls['bookName'].hasError('maxlength')" class="text text-danger">Maximum 20 characters allowed!!</span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="ISBN_Number" placeholder="Enter ISBN Number"><br>
+                <span *ngIf="addBookForm.controls['ISBN_Number'].hasError('required') && addBookForm.controls['ISBN_Number'].touched" class="text text-danger">Please provide ISBN number!!</span>
+                <span *ngIf="addBookForm.controls['ISBN_Number'].hasError('minlength')" class="text text-danger">Minimum 6 characters allowed!!</span>
+                <span *ngIf="addBookForm.controls['ISBN_Number'].hasError('maxlength')" class="text text-danger">Maximum 20 characters allowed!!</span> 
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="author" placeholder="Enter Author"><br>
+                <span *ngIf="addBookForm.controls['author'].hasError('required') && addBookForm.controls['author'].touched" class="text text-danger">Please provide author!!</span>
+                <span *ngIf="addBookForm.controls['author'].hasError('maxlength')">Maximum 20 characters allowed!!</span>
+                <span *ngIf="addBookForm.controls['author'].hasError('minlength')">Minimum 3 charactes required!!</span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="category" placeholder="Enter Book Category"><br>
+                <span *ngIf="addBookForm.controls['category'].hasError('required') && addBookForm.controls['category'].touched" class="text text-danger">Please provide book category!!</span>
+                <span *ngIf="addBookForm.controls['category'].hasError('maxlength')" class="text text-danger">Maximum 10 characters allowed!!</span>
+                <span *ngIf="addBookForm.controls['category'].hasError('minlength')">Minimum 3 characters required</span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="price" placeholder="Enter Book Price"><br>
+                <span *ngIf="addBookForm.controls['price'].hasError('required') && addBookForm.controls['price'].touched" class="text text-danger">Please provide book price!!</span>
+                <!-- <span *ngIf="addBookForm.controls['category'].hasError('maxlength')" class="text text-danger">Maximum 10 characters allowed!!</span>
+                <span *ngIf="addBookForm.controls['category'].hasError('minlength')">Minimum 3 characters required</span> -->
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="pages" placeholder="Enter number of pages"><br>
+                <span *ngIf="addBookForm.controls['pages'].hasError('required') && addBookForm.controls['pages'].touched" class="text text-danger">Please provide number of pages!!</span>
+                <span *ngIf="addBookForm.controls['pages'].hasError('minlength')" class="text text-danger">Minimum 1 characters allowed!!</span>
+                <span *ngIf="addBookForm.controls['pages'].hasError('maxlength')" class="text text-danger">Maximum 4 characters allowed!!</span>
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!addBookForm.valid">Submit Response</button>
+        </form><br>
+        <div *ngIf="valid">
+            <span class="text text-success"><strong>Bravo!! Book added successfully</strong></span>
+        </div>
+        <div *ngIf="!valid">
+            <span class="text text-danger"><strong>{{errormsg}}</strong></span>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

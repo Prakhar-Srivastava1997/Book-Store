@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="svg">
+                <h2 class="head">Update Form</h2>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success" id="alertmsg">
+                <strong>Bravo!</strong> Customer details updated successfully.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="alertsuccessbtn()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form [formGroup]="updateForm" (ngSubmit)="postData(updateForm)" class="form">
+                <div class="form-group">
+                    <input type="text" formControlName="username" placeholder="Enter your name"><br>
+                    <span *ngIf="updateForm.controls['username'].hasError('required') && updateForm.controls['username'].touched" class="text text-danger">Please provide username!!</span>
+                    <span *ngIf="updateForm.controls['username'].hasError('minlength')" class="text text-danger">Minimum 5 characters allowed!!</span>
+                    <span *ngIf="updateForm.controls['username'].hasError('maxlength')" class="text text-danger">Maximum 20 characters allowed!!</span>
+                </div>
+                <div class="form-group">
+                    <input type="password" formControlName="password" placeholder="Enter Password"><br>
+                    <span *ngIf="updateForm.controls['password'].hasError('required') && updateForm.controls['password'].touched" class="text text-danger">Please provide password!!</span>
+                    <span *ngIf="updateForm.controls['password'].hasError('minlength')" class="text text-danger">Minimum 6 characters allowed!!</span>
+                    <span *ngIf="updateForm.controls['password'].hasError('maxlength')" class="text text-danger">Maximum 15 characters allowed!!</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="email" placeholder="Enter Emailid"><br>
+                    <span *ngIf="updateForm.controls['email'].hasError('required') && updateForm.controls['email'].touched" class="text text-danger">Please provide email id!!</span>
+                    <span *ngIf="updateForm.controls['email'].hasError('email')" class="text text-danger">Email id invalid!!</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="address" placeholder="Enter Address"><br>
+                    <span *ngIf="updateForm.controls['address'].hasError('required') && updateForm.controls['address'].touched" class="text text-danger">Please provide address!!</span>
+                    <span *ngIf="updateForm.controls['address'].hasError('maxlength')" class="text text-danger">Maximum 50 characters allowed!!</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="pincode" placeholder="Enter Pincode"><br>
+                    <span *ngIf="updateForm.controls['pincode'].hasError('required') && updateForm.controls['pincode'].touched" class="text text-danger">Please provide pincode!!</span>
+                    <span *ngIf="updateForm.controls['pincode'].hasError('minlength')" class="text text-danger">Minimum 6 characters allowed!!</span>
+                    <span *ngIf="updateForm.controls['pincode'].hasError('maxlength')" class="text text-danger">Maximum 6 characters allowed!!</span>
+                </div>
+                <button type="submit" class="btn btn-success" [disabled]="!updateForm.valid">Submit Response</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

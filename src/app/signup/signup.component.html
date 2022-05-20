@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <section class="photo">
+            <div class="svg">
+                <h2 class="head">Sign Up Here</h2>
+                <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="success" id="alertmsg">
+                    <strong>Bravo!</strong> Your Registration is successful.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="alertsuccessbtn()">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                <form [formGroup]="signupForm" (ngSubmit)="postData(signupForm)" class="form">
+                    <div class="form-group">
+                        <input type="text" formControlName="username" placeholder="Enter Username"><br>
+                        <span *ngIf="signupForm.controls['username'].hasError('required') && signupForm.controls['username'].touched" class="text text-danger">Please provide username!!</span>
+                        <span *ngIf="signupForm.controls['username'].hasError('minlength')" class="text text-danger">Minimum 5 characters allowed!!</span>
+                        <span *ngIf="signupForm.controls['username'].hasError('maxlength')" class="text text-danger">Maximum 20 characters allowed!!</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" formControlName="password" placeholder="Enter Password"><br>
+                        <span *ngIf="signupForm.controls['password'].hasError('required') && signupForm.controls['password'].touched" class="text text-danger">Please provide password!!</span>
+                        <span *ngIf="signupForm.controls['password'].hasError('minlength')" class="text text-danger">Minimum 6 characters allowed!!</span>
+                        <span *ngIf="signupForm.controls['password'].hasError('maxlength')" class="text text-danger">Maximum 15 characters allowed!!</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="email" placeholder="Enter Emailid"><br>
+                        <span *ngIf="signupForm.controls['email'].hasError('required') && signupForm.controls['email'].touched" class="text text-danger">Please provide email id!!</span>
+                        <span *ngIf="signupForm.controls['email'].hasError('email')" class="text text-danger">Email id invalid!!</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="address" placeholder="Enter Address"><br>
+                        <span *ngIf="signupForm.controls['address'].hasError('required') && signupForm.controls['address'].touched" class="text text-danger">Please provide address!!</span>
+                        <span *ngIf="signupForm.controls['address'].hasError('maxlength')" class="text text-danger">Maximum 50 characters allowed!!</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="pincode" placeholder="Enter Pincode"><br>
+                        <span *ngIf="signupForm.controls['pincode'].hasError('required') && signupForm.controls['pincode'].touched" class="text text-danger">Please provide pincode!!</span>
+                        <span *ngIf="signupForm.controls['pincode'].hasError('minlength')" class="text text-danger">Minimum 6 characters allowed!!</span>
+                        <span *ngIf="signupForm.controls['pincode'].hasError('maxlength')" class="text text-danger">Maximum 6 characters allowed!!</span>
+                    </div>
+                    <button type="submit" class="btn btn-success" [disabled]="!signupForm.valid">Submit Response</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

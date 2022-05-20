@@ -1,0 +1,46 @@
+body{
+    background-image: url('../../../../assets/cart.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 753px;
+}
+
+.sec1{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.head{
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 5px black;
+  
+}
+
+.address{
+    font-size: 25px;
+}
+
+.sec2{
+margin: 30px;
+width: 650px;
+}
+
+.block{
+    margin-top: 20px;
+}
+.val{
+    margin-left: 10px;
+    color: darkblue
+}
+
+#remove{
+    margin-top: 25px;
+    margin-left: -20px;
+}
+
+#bill{
+    color: darkred;
+    margin-top: 30px;
+    font-weight: bold;
+}

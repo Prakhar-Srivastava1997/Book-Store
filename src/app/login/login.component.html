@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="formbox">
+
+                <img src="../../assets/lockimage.png" alt="image" class="lock">
+                <form [formGroup]="loginForm" (ngSubmit)="Submit(loginForm)" class="mainform">
+                    <h2 class="mainhead">Login Form</h2>
+                    <div class="form-group">
+                        <label>User Name</label><br>
+                        <input type="text" formControlName='uname'>
+                        <span *ngIf="loginForm.controls['uname'].hasError('required')" class="text text-danger">
+                            Kindly provide user name!
+                        </span>
+                        <span *ngIf="loginForm.controls['uname'].hasError('maxlength')" class="text text-danger">
+                            Maximum 20 characters allowed!
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Id</label><br>
+                        <input type="text" formControlName='emailId'>
+                        <span *ngIf="loginForm.controls['emailId'].hasError('required')" class="text text-danger">Email
+                            Id Required!</span>
+                    </div>
+                    <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

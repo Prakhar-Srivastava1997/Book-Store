@@ -1,0 +1,18 @@
+.jumbotron{
+margin-top: 100px;
+}
+
+#head{
+    font-weight:bold;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.para{
+    color: darkred;
+    text-align: center;
+}
+
+button{
+    margin-left: 410px;
+    border-radius: 30px;
+}

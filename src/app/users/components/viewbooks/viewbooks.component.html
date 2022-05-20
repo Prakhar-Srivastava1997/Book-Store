@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+              <h2>Our Collection Record</h2>
+            </div>
+            <div class="col-lg-6">
+              <div *ngIf="isItemAdded">
+                <button type="button" class="btn btn-primary" (click)="viewCart()" id="viewcartbutton">View Your Cart</button>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Book Title</th>
+                <th scope="col">ISBN #</th>
+                <th scope="col">Author</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Pages</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let res of booklist">
+                  <td>{{res.bookName}}</td>
+                  <td>{{res.ISBN_Number}}</td>
+                  <td>{{res.author}}</td>
+                  <td>{{res.category}}</td>
+                  <td>${{res.price}}</td>
+                  <td>{{res.pages}}</td>
+                  <td>
+                    <i class="glyphicon glyphicon-shopping-cart" id="cart" (click)="additem(res)"></i>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h2>Our Valuable Customers</h2>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Email Id</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">PinCode</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let res of usersList">
+                      <td>{{res.username}}</td>
+                      <td>{{res.email}}</td>
+                      <td>{{res.address}}</td>
+                      <td>{{res.pincode}}</td>
+                      <td>
+                          <i class="glyphicon glyphicon-trash" id="trash" (click)="trash(res.id)"></i>
+                          <i class="glyphicon glyphicon-edit" id="edit" (click)="edit(res.id)"></i>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html>

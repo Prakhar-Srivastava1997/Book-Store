@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <section class="sec1">
+                <h2 class="display-3 head">Hi {{name}}! Please check below details to place your order</h2><br>
+                <p class="address">Your Order will be delivered to address - <strong>{{address}}</strong></p>
+            </section>
+        </div>
+        <div class="row">
+            <section class="sec2">
+                <h2 class="display-3">View Your Cart</h2>
+                <div *ngFor="let res of bkarray">
+                    <div class="block">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="val">Book Title-<strong>{{res.bookName}}</strong></p>
+                                <p class="val">ISBN #-<strong>{{res.ISBN_Number}}</strong></p>
+                                <p class="val">Author-<strong>{{res.author}}</strong></p>
+                            </div>
+                            <div class="col-lg-5">
+                                <p class="val">Category-<strong>{{res.category}}</strong></p>
+                                <p class="val">Price-<strong>${{res.price}}</strong></p>
+                                <P class="val">Pages-<strong>{{res.pages}}</strong></P>
+                            </div>
+                            <div class="col-lg-2">
+                                <button type="button" class="btn btn-danger" id="remove" (click)="removeItem(res)">Remove</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 class="display-4" id="bill">Your Grand Total - <strong>${{totalamt}}</strong></h2><br>
+                </div>
+                <button type="button" class="btn btn-primary" (click)="proceedToPay()">Proceed To Pay</button>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "admin": [
+    {
+      "username": "admin",
+      "email": "admin@123"
+    }
+  ],
+  "users": [
+    {
+      "username": "Prakhar",
+      "password": "prakhar",
+      "email": "prakhar@gmail.com",
+      "address": "23/M/7",
+      "pincode": "208022",
+      "id": 1
+    },
+    {
+      "username": "Pravin",
+      "password": "pravin",
+      "email": "pravin@gmail.com",
+      "address": "106/141",
+      "pincode": "208012",
+      "id": 2
+    }
+  ],
+  "books": [
+    {
+      "bookName": "Harry Potter",
+      "ISBN_Number": "ISBN-1",
+      "author": "JK Rowling",
+      "category": "Drama",
+      "price": "500",
+      "pages": "350",
+      "id": 1
+    },
+    {
+      "bookName": "Nirmala",
+      "ISBN_Number": "ISBN-2",
+      "author": "Premchand",
+      "category": "Drama",
+      "price": "400",
+      "pages": "300",
+      "id": 2
+    },
+    {
+      "bookName": "Macbeth",
+      "ISBN_Number": "ISBN-3",
+      "author": "William Shakesphere",
+      "category": "Drama",
+      "price": "600",
+      "pages": "400",
+      "id": 3
+    }
+  ],
+  "wallet": [
+    {
+      "username": "Prakhar",
+      "userid": "1",
+      "amount": 500,
+      "id": 1
+    },
+    {
+      "userid": "2",
+      "username": "Pravin",
+      "amount": 0,
+      "id": 2
+    }
+  ],
+  "orders": [
+    {
+      "username": "Prakhar",
+      "userid": "1",
+      "totalquantity": "1",
+      "totalamount": "400",
+      "orderdate": "Sun Mar 20 2022",
+      "id": 1
+    },
+    {
+      "username": "Pravin",
+      "userid": "2",
+      "totalquantity": "1",
+      "totalamount": "500",
+      "orderdate": "Sun Mar 20 2022",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <section class="left">
+                    <h2 class="display-3 head">{{heading}}</h2>
+                    <button type="button" class="btn btn-danger" id="lgobtn" (click)="logOut()">LOGOUT</button>
+                    <h2 id="adminwallet">Admin Wallet Balance - <strong>${{adminwallet}}</strong></h2>
+                </section>
+            </div>
+            <div class="col-sm-6">
+                <section class="right">
+                    <h2 class="display-3 mytask">My Tasks</h2>
+                    <button type="button" class="btn btn-danger" id="btn1" (click)="addbook()">Add Book</button>
+                    <button type="button" class="btn btn-danger" id="btn2" (click)="viewbooks()">View Books</button>
+                    <button type="button" class="btn btn-danger" id="btn3" (click)="viewcustomers()">View Customers</button>
+                    <button type="button" class="btn btn-danger" id="btn4" (click)="vieworders()">View All Orders</button>
+                </section>
+            </div>
+        </div>
+        <div class="row" *ngIf="viewallorders" id="belowrow">
+            <div class="row">
+                <h2>Our Order List</h2><br>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Buyer Name</th>
+                        <th scope="col">Number of Items</th>
+                        <th scope="col">Total Amount Paid</th>
+                        <th scope="col">Order Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let res of orderlist">
+                          <td>{{res.username}}</td>
+                          <td>{{res.totalquantity}}</td>
+                          <td>${{res.totalamount}}</td>
+                          <td>{{res.orderdate}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

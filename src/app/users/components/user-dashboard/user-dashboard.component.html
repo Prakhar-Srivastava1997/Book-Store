@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <section class="sec1">
+                <button type="button" class="btn btn-danger" (click)="logout()" id="logout">LOGOUT</button>
+                <h2 class="head">Welcome ! {{username}}</h2>
+                <p class="para">Hi {{username}}, welcome to your dashboard. Here you can explore our top level book collection & also you can view your purchase history</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="flip-card" id="viewbooklist">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                <h2>Our Book Collection</h2>
+                              </div>
+                              <div class="flip-card-back">
+                                <button type="button" class="btn btn-danger" (click)="viewbook()">View All</button>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="flip-card" id="viewpurchasehistory">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                <h2>My Purchase History</h2>
+                              </div>
+                              <div class="flip-card-back">
+                                <button type="button" class="btn btn-danger" (click)="vieworder()">View History</button>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="row" id="moneyrow">
+                  <div class="col-lg-5">
+                    <h2>Your Wallet Balance is - <strong>${{balance}}</strong></h2>
+                  </div>
+                  <div class="col-lg-3">
+                    <button type="button" class="btn btn-primary" (click)="addmoney()" id="addmoneytowallet">Add Money To Wallet</button>
+                  </div>
+                  <div *ngIf="addMoneyRequired" class="col-lg-4">
+                    <form [formGroup]="addMoneyForm" (ngSubmit)="depositMoney(addMoneyForm)">
+                      <div class="form-group">
+                        <input type="number" formControlName="amount" placeholder="Enter Amount"><br>
+                        <span class="text text-danger" *ngIf="addMoneyForm.controls['amount'].hasError('required') && addMoneyForm.controls['amount'].touched">Amount required!!</span>
+                      </div>
+                      <button type="submit" class="btn btn-primary" [disabled]="!addMoneyForm.valid">Add</button>
+                    </form>
+                  </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

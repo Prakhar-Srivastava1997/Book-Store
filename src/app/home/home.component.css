@@ -1,0 +1,117 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navigation{
+    background-color: black;
+    height: 70px;
+    width: 100%;
+}
+
+label.logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navigation ul{
+    float: right;
+    list-style: none;
+    padding-right: 30px;
+}
+
+.navigation ul li{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.navigation ul li a{
+    padding-right: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+a:hover{
+    background:white;
+    transition: .5s;
+}
+
+.link1{
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
+.link1:hover{
+    color:black;
+}
+
+.link2{
+    padding-left: 10px;
+}
+
+.link2:hover{
+    color: black;
+}
+
+.imgdiv{
+    width: 100%;
+    height: 628px;
+    background-image: url(../../assets/bookimage.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;
+    background-color: black;
+    height: 55px;
+}
+
+.footer label{
+    color: white;
+    font-weight: bold;
+}
+
+.footer ul li{
+    display: inline-flex;
+    margin-left: 20px;
+}
+ .link3{
+     border-radius: 3px;
+     font-weight: bold;
+     text-decoration: none;
+ }
+
+ .link4{
+    border-radius: 3px;
+    font-weight: bold;
+    text-decoration: none;
+ }
+
+ .link5{
+    padding-left: 10px;
+ }
+
+ .link5:hover{
+     color: black;
+ }
+
+ .link6{
+    border-radius: 3px;
+    font-weight: bold;
+    text-decoration: none;
+ }
+
+
+
+
+

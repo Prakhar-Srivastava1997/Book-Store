@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="svg">
+            <h2 class="head">Update Book Form</h2>
+        <form [formGroup]="updateBook" (ngSubmit)="updatebook(updateBook)" class="form">
+            <div class="form-group">
+                <input type="text" formControlName="bookName" placeholder="Enter Book Title"><br>
+                <span *ngIf="updateBook.controls['bookName'].hasError('required') && updateBook.controls['bookName'].touched" class="text text-danger">Please provide book title!!</span>
+                <span *ngIf="updateBook.controls['bookName'].hasError('minlength')" class="text text-danger">Minimum 5 characters allowed!!</span>
+                <span *ngIf="updateBook.controls['bookName'].hasError('maxlength')" class="text text-danger">Maximum 20 characters allowed!!</span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="ISBN_Number" placeholder="Enter ISBN Number"><br>
+                <span *ngIf="updateBook.controls['ISBN_Number'].hasError('required') && updateBook.controls['ISBN_Number'].touched" class="text text-danger">Please provide ISBN number!!</span>
+                <span *ngIf="updateBook.controls['ISBN_Number'].hasError('minlength')" class="text text-danger">Minimum 6 characters allowed!!</span>
+                <span *ngIf="updateBook.controls['ISBN_Number'].hasError('maxlength')" class="text text-danger">Maximum 20 characters allowed!!</span> 
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="author" placeholder="Enter Author"><br>
+                <span *ngIf="updateBook.controls['author'].hasError('required') && updateBook.controls['author'].touched" class="text text-danger">Please provide author!!</span>
+                <span *ngIf="updateBook.controls['author'].hasError('maxlength')">Maximum 20 characters allowed!!</span>
+                <span *ngIf="updateBook.controls['author'].hasError('minlength')">Minimum 3 charactes required!!</span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="category" placeholder="Enter Book Category"><br>
+                <span *ngIf="updateBook.controls['category'].hasError('required') && updateBook.controls['category'].touched" class="text text-danger">Please provide book category!!</span>
+                <span *ngIf="updateBook.controls['category'].hasError('maxlength')" class="text text-danger">Maximum 10 characters allowed!!</span>
+                <span *ngIf="updateBook.controls['category'].hasError('minlength')">Minimum 3 characters required</span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="price" placeholder="Enter Book Price"><br>
+                <span *ngIf="updateBook.controls['price'].hasError('required') && updateBook.controls['price'].touched" class="text text-danger">Please provide book price!!</span>
+                <!-- <span *ngIf="updateBook.controls['category'].hasError('maxlength')" class="text text-danger">Maximum 10 characters allowed!!</span>
+                <span *ngIf="updateBook.controls['category'].hasError('minlength')">Minimum 3 characters required</span> -->
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="pages" placeholder="Enter number of pages"><br>
+                <span *ngIf="updateBook.controls['pages'].hasError('required') && updateBook.controls['pages'].touched" class="text text-danger">Please provide number of pages!!</span>
+                <span *ngIf="updateBook.controls['pages'].hasError('minlength')" class="text text-danger">Minimum 1 characters allowed!!</span>
+                <span *ngIf="updateBook.controls['pages'].hasError('maxlength')" class="text text-danger">Maximum 4 characters allowed!!</span>
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!updateBook.valid">Submit Response</button>
+        </form><br>
+        <div *ngIf="success">
+            <span class="text text-success"><strong>Bravo!! Book details updated successfully</strong></span>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

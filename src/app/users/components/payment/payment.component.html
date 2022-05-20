@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h2>Payment Form</h2>
+        </div>
+        <div class="row">
+            <form [formGroup]="paymentForm">
+                <div class="form-group">
+                    <label for="cardHolderName">Card Holder Name</label>
+                    <input type="text" formControlName="cardHolderName" placeholder="Enter here">
+                    <span *ngIf="paymentForm.controls['cardHolderName'].hasError('required') && paymentForm.controls['cardHolderName'].touched">This field is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" formControlName="cardNumber" placeholder="Enter here">
+                    <span *ngIf="paymentForm.controls['cardNumber'].hasError('required') && paymentForm.controls['cardNumber'].touched">This field is required</span>
+                    <span *ngIf="paymentForm.controls['cardNumber'].hasError('maxlength')" class="text text-danger">Max 12 characters allowed</span>
+                    <span *ngIf="paymentForm.controls['cardNumber'].hasError('minlength')" class="text text-danger">Min 12 characters allowed</span>
+                    <span *ngIf="paymentForm.controls['cardNumber'].hasError('pattern')" class="text text-danger">Only numbers allowed</span>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="password" formControlName="cvv" placeholder="Enter here">
+                    <span *ngIf="paymentForm.controls['cvv'].hasError('required') && paymentForm.controls['cvv'].touched">This field is required</span>
+                    <span *ngIf="paymentForm.controls['cvv'].hasError('maxlength')" class="text text-danger">Max 3 characters allowed</span>
+                    <span *ngIf="paymentForm.controls['cvv'].hasError('minlength')" class="text text-danger">Min 3 characters allowed</span>
+                    <span *ngIf="paymentForm.controls['cvv'].hasError('pattern')" class="text text-danger">Only numbers allowed</span>
+                </div>
+                <div class="form-group">
+                    <label for="expiry">Expiry Date</label>
+                    <input type="text" formControlName="expiry" placeholder="Enter here">
+                    <span *ngIf="paymentForm.controls['expiry'].hasError('required') && paymentForm.controls['expiry'].touched">This field is required</span>
+                    <span *ngIf="paymentForm.controls['expiry'].hasError('maxlength')" class="text text-danger">Max 5 characters allowed</span>
+                    <span *ngIf="paymentForm.controls['expiry'].hasError('minlength')" class="text text-danger">Min 5 characters allowed</span>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="orderNow()" [disabled]="!paymentForm.valid">Order Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
